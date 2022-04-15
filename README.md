@@ -67,3 +67,16 @@ Depends on the .Application.Contracts project to be able to access permission de
 
 9. Web Project:
 This project contains the User Interface (UI) of the application if you are using ASP.NET Core MVC UI. It contains Razor pages, JavaScript files, CSS files, images and so on... This project contains the main appsettings.json file that contains the connection string and other configuration of the application. Depends on the .HttpApi since UI layer needs to use APIs and application service interfaces of the solution.
+
+### Test Projects
+.Domain.Tests is used to test the domain layer.
+.Application.Tests is used to test the application layer.
+.EntityFrameworkCore.Tests is used to test EF Core configuration and custom repositories.
+.Web.Tests is used to test the UI (if you are using ASP.NET Core MVC UI).
+.TestBase is a base (shared) project for all tests.
+
+This template comes with the test infrastructure properly configured using the 
+xUnit, Shouldly, and NSubstitute libraries. It uses the SQLite in-memory database to 
+mock the database. A separate database is created for each test. It is seeded and destroyed 
+at the end of the test. In this way, tests do not affect each other, and your real database 
+remains untouched.
