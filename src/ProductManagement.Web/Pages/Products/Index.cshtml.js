@@ -41,6 +41,20 @@
                     title: l('CreationTime'),
                     data: "creationTime",
                     dataFormat: 'date'
+                },
+                {
+                    title: l('Actions'),
+                    rowAction: {
+                        items:
+                            [
+                                {
+                                    text: l('Edit'),
+                                    action: function (data) {
+                                        editModal.open({ id: data.record.id });
+                                    }
+                                }
+                            ]
+                    }
                 }
             ]
         })
@@ -48,6 +62,12 @@
 
     var createModal = new abp.ModalManager(abp.appPath + 'Products/CreateProductModal');
     createModal.onResult(function () {
+        dataTable.ajax.reload();
+    });
+
+    var editModal = new abp.ModalManager(abp.appPath + 'Products/EditProductModal');
+    // This code refreshes the data table after saving a product edit dialog, so we can see the latest data on the table
+    editModal.onResult(function () {
         dataTable.ajax.reload();
     });
 

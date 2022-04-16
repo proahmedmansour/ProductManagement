@@ -45,5 +45,21 @@ namespace ProductManagement.Products
 
             return new ListResultDto<CategoryLookupDto>(ObjectMapper.Map<List<Category>, List<CategoryLookupDto>>(categories));
         }
+
+        public async Task<ProductDto> GetAsync(Guid id)
+        {
+            return ObjectMapper.Map<Product, ProductDto>(await _productRepository.GetAsync(id));
+        }
+
+        public async Task UpdateAsync(Guid id, CreateUpdateProductDto input)
+        {
+            var product = await _productRepository.GetAsync(id);
+
+            ObjectMapper.Map(input, product);
+
+            /*we don't need to call _productRepository.UpdateAsync because 
+            EF Core has a change tracking system.ABP's Unit of Work system automatically saves the 
+            changes at the end of the request if it doesn't throw an exception.*/
+        }
     }
 }

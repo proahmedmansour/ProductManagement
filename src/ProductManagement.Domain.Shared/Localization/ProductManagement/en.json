@@ -18,6 +18,7 @@
     "NewProduct": "New Product",
     "Category": "Category",
     "IsFreeCargo": "Free Cargo",
-    "ReleaseDate": "Release Date"
+    "ReleaseDate": "Release Date",
+    "Actions": "Actions"
   }
 }
