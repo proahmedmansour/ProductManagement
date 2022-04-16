@@ -1,0 +1,22 @@
+﻿@page
+@using ProductManagement.Web.Pages.Products
+@using Microsoft.Extensions.Localization
+@using ProductManagement.Localization
+@model IndexModel
+@inject IStringLocalizer<ProductManagementResource> L
+@section scripts
+{
+    @*tag helper for adding script files to the page with automatic 
+      bundling, minification, and versioning support*@
+ <abp-script src="/Pages/Products/Index.cshtml.js" /> 
+}
+
+@*tag helper to render a card component in a type-safe and easy way (it renders a Bootstrap card)*@
+<abp-card>
+ <abp-card-header>
+ <h2>@L["Menu:Products"]</h2>
+ </abp-card-header>
+ <abp-card-body>
+ <abp-table id="ProductsTable" striped-rows="true" />
+</abp-card-body>
+</abp-card>
