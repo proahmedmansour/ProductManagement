@@ -12,5 +12,6 @@ namespace ProductManagement.Products
         Task<ListResultDto<CategoryLookupDto>> GetCategoriesAsync();
         Task<ProductDto> GetAsync(Guid id);
         Task UpdateAsync(Guid id, CreateUpdateProductDto input);
+        Task DeleteAsync(Guid id);
     }
 }

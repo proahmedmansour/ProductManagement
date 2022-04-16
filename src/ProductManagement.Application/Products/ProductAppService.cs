@@ -61,5 +61,10 @@ namespace ProductManagement.Products
             EF Core has a change tracking system.ABP's Unit of Work system automatically saves the 
             changes at the end of the request if it doesn't throw an exception.*/
         }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _productRepository.DeleteAsync(id);
+        }
     }
 }

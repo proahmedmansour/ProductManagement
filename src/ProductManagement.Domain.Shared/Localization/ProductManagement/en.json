@@ -19,6 +19,8 @@
     "Category": "Category",
     "IsFreeCargo": "Free Cargo",
     "ReleaseDate": "Release Date",
-    "Actions": "Actions"
+    "Actions": "Actions",
+    "ProductDeletionConfirmationMessage": "Are you sure to delete, this product: {0}",
+    "SuccessfullyDeleted": "Successfully deleted!"
   }
 }
